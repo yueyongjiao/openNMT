@@ -114,18 +114,18 @@ def main():
         data, translator.fields,
         opt.n_best, opt.replace_unk, opt.tgt)
 
-    print '='*50
-    print opt.beam_size,'beam_size'
-    print opt.length_penalty,'length_penalty'
-    print opt.alpha,'alpha'
-    print opt.coverage_penalty,'coverage_penalty'
-    print opt.beta,'beta'
-    print '='*50
+    print('='*50)
+    print(opt.beam_size,' beam_size')
+    print(opt.length_penalty, 'length_penalty')
+    print(opt.alpha, 'alpha')
+    print(opt.coverage_penalty, 'coverage_penalty')
+    print(opt.beta, 'beta')
+    print('='*50)
     # Statistics
     counter = count(1)
     pred_score_total, pred_words_total = 0, 0
     gold_score_total, gold_words_total = 0, 0
-    f = open('atten','w')
+    f = open('atten', 'w')
     fcount = 0
     for batch in data_iter:
         batch_data = translator.translate_batch(batch, data)

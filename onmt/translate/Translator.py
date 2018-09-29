@@ -230,5 +230,7 @@ class Translator(object):
             tgt = tgt.unsqueeze(1)
             scores = out.data.gather(1, tgt)
             scores.masked_fill_(tgt.eq(tgt_pad), 0)
+            print(len(gold_scores))
+            print(len(scores))
             gold_scores += scores
         return gold_scores
