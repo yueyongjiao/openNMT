@@ -231,7 +231,9 @@ class Translator(object):
             scores = out.data.gather(1, tgt)
             scores.masked_fill_(tgt.eq(tgt_pad), 0)
             print(len(gold_scores))
+            print(gold_scores.shape)
             print(len(scores))
+            print(scores.shape)
             gold_scores += scores
             print("-------------------------------")
             print(gold_scores.shape)
