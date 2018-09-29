@@ -232,8 +232,10 @@ class Translator(object):
             scores.masked_fill_(tgt.eq(tgt_pad), 0)
             print(len(gold_scores))
             print(gold_scores.shape)
+            print(gold_scores.type)
             print(len(scores))
             print(scores.shape)
+            print(scores.type)
             gold_scores += scores
             print("-------------------------------")
             print(gold_scores.shape)
