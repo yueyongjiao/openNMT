@@ -236,6 +236,7 @@ class Translator(object):
             print(len(scores))
             print(scores.shape)
             print(scores.type)
+            print(batch.batch_size)
             gold_scores += scores
             print("-------------------------------")
             print(gold_scores.shape)
