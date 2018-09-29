@@ -233,4 +233,6 @@ class Translator(object):
             print(len(gold_scores))
             print(len(scores))
             gold_scores += scores
+            print("-------------------------------")
+            print(gold_scores.shape)
         return gold_scores
