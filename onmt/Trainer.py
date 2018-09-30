@@ -48,7 +48,7 @@ class Statistics(object):
         return self.loss / self.n_words
 
     def ppl(self):
-        return math.exp(min(self.loss / self.n_words, 100))
+        return math.exp(min(self.loss / self.n_words.float(), 100))
 
     def elapsed_time(self):
         return time.time() - self.start_time
