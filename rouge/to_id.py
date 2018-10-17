@@ -1,8 +1,17 @@
 # coding:utf-8
 import sys
+import chardet
+
+
+def code(path):
+    f = open(path, 'rb')
+    f_read = f.read()
+    f_charInfo = chardet.detect(f_read)
+    return f_charInfo
 
 s = sys.argv[1]
 wd = {}
+print(code('word_dic'))
 f = open('word_dic')
 wid = 0
 for line in f:
