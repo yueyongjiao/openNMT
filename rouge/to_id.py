@@ -19,7 +19,7 @@ fw = open(s + '_id', 'wb')
 for line in f:
     res = line.strip().split(' ')
     for i in range(len(res) - 1):
-        fw.write(str(wd[res[i]]) + ' ')
+        fw.write(str(wd[res[i].decode('utf-8')]) + ' ')
     fw.write(str(wd[res[-1]]) + '\n')
 fw.close()
 f.close()
