@@ -28,7 +28,6 @@ fw = open(s + '_id', 'wb')
 for line in f:
     res = line.strip().split(' ')
     for i in range(len(res) - 1):
-        print(wd[res[i]])
         # print(wd[res[i].decode('utf-8')])
         if res[i] in wd:
             fw.write(str(wd[res[i]]) + ' ')
