@@ -222,7 +222,9 @@ class TextDataset(ONMTDatasetBase):
             src_vocab_size = max([t.max() for t in data]) + 1
             print(type(src_vocab_size))
             print(type(src_size))
-            alignment = torch.zeros(src_size, len(data), src_vocab_size)
+            alignment = torch.zeros(src_size,
+                                    len(data),
+                                    src_vocab_size)
             for i, sent in enumerate(data):
                 for j, t in enumerate(sent):
                     alignment[j, i, t] = 1
