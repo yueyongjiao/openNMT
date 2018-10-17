@@ -1,7 +1,7 @@
-# coding:utf8
+# coding:utf-8
 import sys
 
-s = "/home/yueyongjiao/gitProject/python2_workplace/openNMT/openNMT/EventTeller/test_target.txt"
+s = sys.argv[1]
 wd = {}
 f = open('word_dic')
 wid = 0
@@ -11,17 +11,15 @@ for line in f:
     wid += 1
 f.close()
 wd['<unk>'] = wid
-print(len(wd))
+print (len(wd))
 wd[''] = 0
 
-# f = open(s, 'r', 'utf-8')
-
 f = open(s)
-fw = open(s + '_id', 'w')
+fw = open(s + '_id', 'wb')
 for line in f:
     res = line.strip().split(' ')
     for i in range(len(res) - 1):
-        fw.write(str(wd[res[i].decode('gbk')]) + ' ')
+        fw.write(str(wd[res[i]]) + ' ')
     fw.write(str(wd[res[-1]]) + '\n')
 fw.close()
 f.close()
