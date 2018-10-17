@@ -23,7 +23,7 @@ wd['<unk>'] = wid
 print(len(wd))
 wd[''] = 0
 
-f = open(s, 'r', encoding='utf-8')
+f = open(s)
 fw = open(s + '_id', 'wb')
 for line in f:
     res = line.strip().split(' ')
