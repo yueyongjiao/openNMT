@@ -426,9 +426,9 @@ def main():
     # Build optimizer.
     optim = build_optim(model, checkpoint)
     
-    print '='*50
-    print opt.coverage_attn,'coverage'
-    print '='*50
+    print('='*50)
+    print(opt.coverage_attn, 'coverage')
+    print('='*50)
     # Do training.
     train_model(model, fields, optim, data_type, model_opt)
 
