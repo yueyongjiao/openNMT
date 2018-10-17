@@ -30,9 +30,12 @@ for line in f:
     for i in range(len(res) - 1):
         print(wd[res[i]])
         # print(wd[res[i].decode('utf-8')])
-        fw.write(str(wd[res[i]]) + ' ')
+        if res[i] in wd:
+            fw.write(str(wd[res[i]]) + ' ')
 
     fw.write(str(wd[res[-1]]) + '\n')
 fw.close()
 f.close()
+
+
 
