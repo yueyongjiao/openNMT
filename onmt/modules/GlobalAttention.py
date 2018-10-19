@@ -160,15 +160,15 @@ class GlobalAttention(nn.Module):
             aeq(sourceL, sourceL_)
 
         if coverage is not None:
-            
+            '''
             cover = coverage.view(-1).unsqueeze(1)
             memory_bank = memory_bank * self.linear_cover(cover).view_as(memory_bank)
             memory_bank = self.tanh(memory_bank)
             '''
-            cover_score = torch.exp(-10 * coverage)
+            cover_score = torch.exp(-5 * coverage)
             cover_score = cover_score.unsqueeze(2).expand(-1, -1, dim)
             memory_bank = memory_bank * cover_score
-            '''
+
         # compute attention scores, as in Luong et al.
         align = self.score(input, memory_bank)
 
