@@ -311,13 +311,12 @@ def lazily_load_dataset(corpus_type):
     assert corpus_type in ["train", "valid"]
 
     def lazy_dataset_loader(pt_file, corpus_type):
-        print(pt_file)
         dataset = torch.load(pt_file)
         print('Loading %s dataset from %s, number of examples: %d' %
               (corpus_type, pt_file, len(dataset)))
         return dataset
     # Sort the glob output by file name (by increasing indexes).
-    pts = opt.data
+    pts = [opt.data]
     # pts = sorted(glob.glob(opt.data + '.' + corpus_type + '.[0-9]*.pt'))
     print(str(pts))
     if pts:
