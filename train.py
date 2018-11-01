@@ -316,7 +316,7 @@ def lazily_load_dataset(corpus_type):
               (corpus_type, pt_file, len(dataset)))
         return dataset
     # Sort the glob output by file name (by increasing indexes).
-
+    # pts = [opt.data]
     pts = sorted(glob.glob(opt.data + '.' + corpus_type + '.[0-9]*.pt'))
     if pts:
         for pt in pts:
@@ -411,7 +411,7 @@ def main():
     # (All datasets have the same data_type).
     first_dataset = next(lazily_load_dataset("train"))
     data_type = first_dataset.data_type
-    print(str(data_type))
+
     # Load fields generated from preprocess phase.
     fields = load_fields(first_dataset, data_type, checkpoint)
 
